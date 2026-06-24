@@ -20,7 +20,8 @@ const content = `
           <li>✓ 24-hour Rental Period</li>
           <li>✓ Full Setup & Breakdown</li>
         </ul>
-        <a href="/booking.html?package=16ft" class="btn-primary">Book 16ft Package</a>
+        <a href="https://buy.stripe.com/cNi9AT5mx9JXdek2ON8IU01" class="btn-primary" target="_blank" rel="noopener">Pay & Book Now — $299.99</a>
+            <a href="/booking.html?package=16ft" style="display: inline-block; margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-light);">Or submit an inquiry first</a>
       </div>
       <div class="card" style="border: 2px solid var(--accent);">
         <h3>24ft Screen Package</h3>
@@ -34,7 +35,8 @@ const content = `
           <li>✓ 24-hour Rental Period</li>
           <li>✓ Priority Setup & Breakdown</li>
         </ul>
-        <a href="/booking.html?package=24ft" class="btn-primary">Book 24ft Package</a>
+        <a href="https://buy.stripe.com/4gM3cKV1mdreio1KJ8IU00" class="btn-primary" target="_blank" rel="noopener">Pay & Book Now — $399.99</a>
+            <a href="/booking.html?package=24ft" style="display: inline-block; margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-light);">Or submit an inquiry first</a>
       </div>
     </div>
   </section>
