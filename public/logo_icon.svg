@@ -1,0 +1,13 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded Rectangle Screen -->
+  <rect x="25" y="50" width="150" height="100" rx="15" ry="15" fill="none" stroke="#FFB400" stroke-width="8" />
+  
+  <!-- Center Star -->
+  <path d="M100 70 L105 85 L120 85 L108 95 L112 110 L100 100 L88 110 L92 95 L80 85 L95 85 Z" fill="#FFB400" />
+  
+  <!-- Left Star -->
+  <path d="M65 90 L68 98 L76 98 L70 103 L72 111 L65 106 L58 111 L60 103 L54 98 L62 98 Z" fill="#FFB400" />
+  
+  <!-- Right Star -->
+  <path d="M135 90 L138 98 L146 98 L140 103 L142 111 L135 106 L128 111 L130 103 L124 98 L132 98 Z" fill="#FFB400" />
+</svg>
