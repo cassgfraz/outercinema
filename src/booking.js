@@ -72,16 +72,35 @@ document.getElementById('booking-form').addEventListener('submit', (e) => {
   const checked = [...document.querySelectorAll('input[name="addons"]:checked')].map(cb => cb.value);
   const addonStr = checked.length ? checked.join(', ') : 'None';
 
-  // Store inquiry info (in a real app this would send to your email)
-  const inquiryMsg = `Inquiry from ${name} (${email}) for ${date} - Package: ${pkg} - Add-ons: ${addonStr}`;
-  console.log(inquiryMsg);
+  // Prepare data for Web3Forms
+  const formData = new FormData();
+  formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY"); // Placeholder - Lead should replace this
+  formData.append("subject", `New Cinema Booking: ${name}`);
+  formData.append("from_name", name);
+  formData.append("email", email);
+  formData.append("date", date);
+  formData.append("package", pkg);
+  formData.append("addons", addonStr);
+  formData.append("message", document.getElementById('message').value);
 
-  // Redirect to appropriate Stripe payment link based on package
-  const stripeLinks = {
-    '16ft': 'https://buy.stripe.com/cNi9AT5mx9JXdek2ON8IU01',
-    '24ft': 'https://buy.stripe.com/4gM3cKV1mdreio1KJ8IU00'
-  };
-  
-  alert(`Thanks ${name}! We'll review your booking for ${date} and be in touch. You'll now be redirected to secure payment to lock in your date.`);
-  window.open(stripeLinks[pkg], '_blank');
+  // Send email notification via Web3Forms
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    console.log("Email notification sent status:", response.status);
+    // Redirect to appropriate Stripe payment link based on package
+    const stripeLinks = {
+      '16ft': 'https://buy.stripe.com/cNi9AT5mx9JXdek2ON8IU01',
+      '24ft': 'https://buy.stripe.com/4gM3cKV1mdreio1KJ8IU00'
+    };
+    
+    alert(`Thanks ${name}! We've received your inquiry for ${date} and will be in touch. You'll now be redirected to secure payment to lock in your date.`);
+    window.location.href = stripeLinks[pkg];
+  })
+  .catch(error => {
+    console.error("Error sending email notification:", error);
+    alert("There was an error processing your inquiry. Please try again or contact us directly.");
+  });
 });

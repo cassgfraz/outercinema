@@ -38,6 +38,25 @@ renderLayout(content)
 
 document.getElementById('contact-form').addEventListener('submit', (e) => {
   e.preventDefault();
-  alert('Message sent! We will get back to you soon.');
-  window.location.href = '/';
+  
+  const formData = new FormData(e.target);
+  formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY"); // Placeholder - Lead should replace this
+  formData.append("subject", `New Contact Form Submission: ${formData.get('name')}`);
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      alert('Message sent! We will get back to you soon.');
+      window.location.href = '/';
+    } else {
+      alert('There was an error sending your message. Please try again.');
+    }
+  })
+  .catch(error => {
+    console.error('Error sending message:', error);
+    alert('There was an error sending your message. Please try again.');
+  });
 });
