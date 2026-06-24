@@ -10,6 +10,7 @@ export default defineConfig({
         booking: resolve(__dirname, 'booking.html'),
         howItWorks: resolve(__dirname, 'how-it-works.html'),
         contact: resolve(__dirname, 'contact.html'),
+        faq: resolve(__dirname, 'faq.html'),
       },
     },
   },

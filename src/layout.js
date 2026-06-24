@@ -13,6 +13,7 @@ export function renderLayout(content) {
           <li><a href="/pricing.html">Pricing</a></li>
           <li><a href="/how-it-works.html">How It Works</a></li>
           <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
           <li><a href="/booking.html" class="btn-primary">Book Now</a></li>
         </ul>
       </nav>
@@ -31,6 +32,7 @@ export function renderLayout(content) {
             <li><a href="/pricing.html">Pricing</a></li>
             <li><a href="/how-it-works.html">How It Works</a></li>
             <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
           </ul>
         </div>
         <div class="footer-contact">
